@@ -1,0 +1,147 @@
+تمرین مربوط
+---
+
+# 1. چاپ اعداد کوچکتر از عدد ورودی
+
+n = int(input("یک عدد وارد کنید: "))
+
+for i in range(n):
+    print(i)
+---
+
+# 2. چاپ مقسوم‌علیه‌های عدد
+
+n = int(input("یک عدد وارد کنید: "))
+
+for i in range(1, n + 1):
+    if n % i == 0:
+        print(i)
+---
+
+# 3. تشخیص عدد اول
+
+n = int(input("یک عدد وارد کنید: "))
+
+is_prime = True
+
+if n <= 1:
+    is_prime = False
+else:
+    for i in range(2, n):
+        if n % i == 0:
+            is_prime = False
+            break
+
+if is_prime:
+    print("عدد اول است")
+else:
+    print("عدد اول نیست")
+---
+
+# 4. چاپ اعداد زوج کوچکتر از عدد
+
+n = int(input("یک عدد وارد کنید: "))
+
+for i in range(n):
+    if i % 2 == 0:
+        print(i)
+---
+
+# 5. چاپ اعداد اول کوچکتر از عدد
+
+n = int(input("یک عدد وارد کنید: "))
+
+for num in range(2, n):
+    is_prime = True
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num)
+---
+
+# 6. چاپ اعداد زوج دو رقمی کوچکتر از عدد
+
+n = int(input("یک عدد وارد کنید: "))
+
+for i in range(10, min(n, 100)):
+    if i % 2 == 0:
+        print(i)
+---
+
+# 7. چاپ مقسوم‌علیه‌های مشترک دو عدد
+
+a = int(input("عدد اول: "))
+b = int(input("عدد دوم: "))
+
+for i in range(1, min(a, b) + 1):
+    if a % i == 0 and b % i == 0:
+        print(i)
+---
+
+# 8. نمایش اعداد زوج یا فرد بین دو عدد با انتخاب کاربر
+
+a = int(input("عدد اول: "))
+b = int(input("عدد دوم: "))
+choice = input("اعداد زوج (z) یا فرد (f)؟ ")
+
+start = min(a, b)
+end = max(a, b)
+
+for i in range(start, end + 1):
+    if choice == "z" and i % 2 == 0:
+        print(i)
+    elif choice == "f" and i % 2 == 1:
+        print(i)
+---
+
+# 9. دریافت تعداد نامشخص عدد و چاپ بزرگترین و مجموع
+
+(ورود عدد 0 پایان ورود است)
+
+largest = None
+total = 0
+
+while True:
+    n = int(input("یک عدد وارد کنید (0 برای پایان): "))
+    
+    if n == 0:
+        break
+    
+    total += n
+    
+    if largest is None or n > largest:
+        largest = n
+
+print("بزرگترین عدد:", largest)
+print("مجموع اعداد:", total)
+---
+
+# 10. تبدیل عدد ده‌دهی به دودویی
+
+### حالت 1: مبنای 10 → دودویی
+
+n = int(input("یک عدد ده‌دهی وارد کنید: "))
+
+binary = ""
+
+if n == 0:
+    binary = "0"
+else:
+    while n > 0:
+        binary = str(n % 2) + binary
+        n //= 2
+
+print("عدد دودویی:", binary)
+### حالت 2: دودویی → ده‌دهی
+
+binary = input("یک عدد دودویی وارد کنید: ")
+
+decimal = 0
+power = 0
+
+for digit in reversed(binary):
+    decimal += int(digit) * (2 ** power)
+    power+=1
+print("عدد ده دهی  ") 
